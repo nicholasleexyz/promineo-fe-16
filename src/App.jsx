@@ -12,11 +12,13 @@ export default function App() {
 
   return (
     <>
-      <div className="pt-3.5 flex-col h-screen flex items-center bg-gray-600 text-xl">
-        <select data-choose-theme>
+      <div className="pt-3.5 flex-col h-screen flex items-center text-xl">
+        <select data-choose-theme className="mr-3.5 self-end">
           <option value="light">Light</option>
           <option value="dark">Dark</option>
           <option value="cupcake">Cupcake</option>
+          <option value="coffee">Coffee</option>
+          <option value="synthwave">Synthwave</option>
         </select>
         <NavBar></NavBar>
         <Routes>
