@@ -4,7 +4,8 @@ import { About } from "./About";
 import { NavBar } from "./NavBar";
 import { useEffect } from "react";
 import { themeChange } from "theme-change";
-import { ThemeSwitcher } from "./ThemeSwitcher";
+// import { ThemeSwitcher } from "./ThemeSwitcher";
+import { Game } from "./Game";
 
 /*
   aabbbbbb
@@ -38,6 +39,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/game" element={<Game></Game>} />
         </Routes>
       </div>
     </>

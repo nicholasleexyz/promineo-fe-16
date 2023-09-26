@@ -32,6 +32,11 @@ export function NavBar() {
             </Link>
           </li>
           <li>
+            <Link className="btn btn-secondary" to="/game">
+              Game
+            </Link>
+          </li>
+          <li>
             <ThemeSwitcher></ThemeSwitcher>
           </li>
         </ul>
