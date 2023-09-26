@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { themeChange } from "theme-change";
 // import { ThemeSwitcher } from "./ThemeSwitcher";
 import { Game } from "./Game";
+import { Create } from "./Create";
 
 /*
   aabbbbbb
@@ -40,6 +41,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/game" element={<Game></Game>} />
+          <Route path="/create" element={<Create></Create>} />
         </Routes>
       </div>
     </>
