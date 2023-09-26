@@ -55,7 +55,10 @@ html {
 
 .board-wrapper{
   width: 100%;
+
+  /* width: fit-content; */
   display: flex;
+  justify-content: center;
   /* background-color: blue; */
 }
 

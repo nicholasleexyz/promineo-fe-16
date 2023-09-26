@@ -10,18 +10,19 @@ export function Board() {
   const [cells, setCells] = useContext(cellsContext);
 
   const [counter, setCounter] = useState(0);
-
   const [lockedCells, setLockedCells] = useState([]);
+  const [currentPuzzleName, setCurrentPuzzleName] = useState("");
 
   useEffect(() => {
     const a = async () =>
       await fetch("./puzzles.json")
         .then((res) => res.json())
         .then((json) => {
-          const p = json[Object.keys(json)[counter]].flat().map((n) => n - 1);
+          const key = Object.keys(json)[counter];
+          const p = json[key].flat().map((n) => n - 1);
           setLockedCells(p.map((c) => c != -1));
           setCells(p);
-          console.log("asdf");
+          setCurrentPuzzleName(key);
         });
 
     a();
@@ -88,29 +89,42 @@ export function Board() {
 
   return (
     <>
-      <button
-        className="btn btn-primary"
-        onClick={() => setCounter((a) => (a + 1) % 5)}
-      >
-        asfd
-      </button>
-      <div className="board bg-neutral">
-        {[...Array(9).keys()].map((j) =>
-          [...Array(9).keys()].map((i) => {
-            return (
-              <Cell
-                key={j * 9 + i}
-                index={j * 9 + i}
-                solved={
-                  solvedRows[j] ||
-                  solvedColumns[i] ||
-                  solvedBlocks[Math.floor(i / 3) + Math.floor(j / 3) * 3]
-                }
-                locked={lockedCells[j * 9 + i]}
-              />
-            );
-          })
-        )}
+      <div className="grid grid-cols-1 content-center">
+        <div className="grid grid-cols-3">
+          <button
+            className="btn btn-primary mb-1.5"
+            onClick={() => setCounter((a) => (a - 1 + 5) % 5)}
+          >
+            Previous
+          </button>
+          <span className="flex justify-center items-center text-3xl mb-1.5">
+            {currentPuzzleName}
+          </span>
+          <button
+            className="btn btn-primary mb-1.5"
+            onClick={() => setCounter((a) => (a + 1) % 5)}
+          >
+            Next
+          </button>
+        </div>
+        <div className="board bg-neutral">
+          {[...Array(9).keys()].map((j) =>
+            [...Array(9).keys()].map((i) => {
+              return (
+                <Cell
+                  key={j * 9 + i}
+                  index={j * 9 + i}
+                  solved={
+                    solvedRows[j] ||
+                    solvedColumns[i] ||
+                    solvedBlocks[Math.floor(i / 3) + Math.floor(j / 3) * 3]
+                  }
+                  locked={lockedCells[j * 9 + i]}
+                />
+              );
+            })
+          )}
+        </div>
       </div>
     </>
   );

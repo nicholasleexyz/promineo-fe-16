@@ -10,6 +10,12 @@ import { Create } from "./Create";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 
 /*
+  [ ] - Create // should be able to create new puzzles
+  [x] - Read
+  [ ] - Update // should be able to edit existing puzzles
+  [ ] - Delete // should be able to delete puzzles
+
+
   aabbbbbb
   aabbbbbb
   aabbbbbb
