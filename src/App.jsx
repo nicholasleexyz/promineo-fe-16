@@ -4,6 +4,27 @@ import { About } from "./About";
 import { NavBar } from "./NavBar";
 import { useEffect } from "react";
 import { themeChange } from "theme-change";
+import { ThemeSwitcher } from "./ThemeSwitcher";
+
+/*
+  aabbbbbb
+  aabbbbbb
+  aabbbbbb
+
+  a - navigation
+  b - content
+
+  navigation routes
+  game
+  puzzle selection 
+
+  create
+    update the puzzle "data base". (not persistent)
+
+  info
+    find a short description of the history of sudoku (maybe have gippity write it :P)
+
+*/
 
 export default function App() {
   useEffect(() => {
@@ -12,14 +33,7 @@ export default function App() {
 
   return (
     <>
-      <div className="pt-3.5 flex-col h-screen flex items-center text-xl">
-        <select data-choose-theme className="mr-3.5 self-end">
-          <option value="light">Light</option>
-          <option value="dark">Dark</option>
-          <option value="cupcake">Cupcake</option>
-          <option value="coffee">Coffee</option>
-          <option value="synthwave">Synthwave</option>
-        </select>
+      <div className="layout">
         <NavBar></NavBar>
         <Routes>
           <Route path="/" element={<Home />} />

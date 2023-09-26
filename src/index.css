@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.layout{
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+    align-items: start;
+    justify-items: start;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+}
+
+/* .navigation {
+    background-color: grey;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: green;
+} */
+
