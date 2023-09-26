@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 .layout{
-    display: grid;
-    grid-template-columns:  1fr 1fr;
-    align-items: start;
-    justify-items: start;
-    width: 100%;
-    height: 100vh;
-    height: 100dvh;
+    /* display: grid; */
+    /* grid-template-columns:  1fr; */
+
+    /* align-items: end;
+    justify-items: end; */
+    /* width: 100%; */
+    /* height: 100vh; */
+    /* height: 100dvh; */
 }
 
 /* .navigation {
