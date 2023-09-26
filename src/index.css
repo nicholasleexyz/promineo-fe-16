@@ -37,6 +37,7 @@ html {
   grid-template-columns: 1fr;
   grid-auto-flow: row;
   align-items: start;
+  width: 100%;
 
   /* background-color: green; */
 }
@@ -46,7 +47,7 @@ html {
   justify-content: center;
   align-items: center;
   font-size: 5rem;
-  background-color: slateblue;
+  /* background-color: slateblue; */
   height: 8rem;
   width: 100%;
 }
@@ -69,7 +70,7 @@ html {
 
   padding: calc(var(--cell-block-gap) * 0.5);
 
-  background-color: grey;
+  /* background-color: grey; */
 }
 
 .cell{
@@ -85,9 +86,10 @@ html {
 
   /* height: ; */
   /* border: solid white 0.1rem; */
-  background-color: slategrey;
+  /* background-color: slategrey; */
+
   /* border: solid black 0.1rem; */
-  outline: solid black 0.1rem;
+  /* outline: solid black 0.1rem; */
 
   font-size: xx-large;
 }
@@ -107,6 +109,6 @@ html {
   margin-right: var(--cell-block-gap);
 }
 
-.solved {
-  background-color: slateblue;
-}
+/* .solved {
+  background-color: succ;
+} */

@@ -22,7 +22,12 @@ export default function Cell({ index, solved }) {
   }
 
   return (
-    <div className={`cell ${solved ? "solved" : ""}`} onClick={asdf}>
+    <div
+      className={`outline-2 outline-neutral-content outline hover:bg-secondary cell ${
+        solved ? "bg-accent" : "bg-primary"
+      }`}
+      onClick={asdf}
+    >
       {/* {index} */}
       {val < 0 ? "" : val + 1}
     </div>
