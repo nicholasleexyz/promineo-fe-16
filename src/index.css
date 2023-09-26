@@ -96,7 +96,7 @@ html {
 }
 
 .cell:hover{
-  background-color: darkslategrey;
+  /* background-color: darkslategrey; */
 }
 
 .cell:nth-child(27n):nth-child(-n + 54)
