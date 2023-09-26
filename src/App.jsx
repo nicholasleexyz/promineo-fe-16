@@ -34,7 +34,7 @@ export default function App() {
 
   return (
     <>
-      <div className="layout bg-neutral">
+      <div className="layout bg-neutral-content text-neutral">
         <NavBar></NavBar>
         <Routes>
           <Route path="/" element={<Home />} />

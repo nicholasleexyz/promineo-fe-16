@@ -23,8 +23,8 @@ export default function Cell({ index, solved }) {
 
   return (
     <div
-      className={`outline-2 outline-neutral-content outline hover:bg-secondary cell ${
-        solved ? "bg-accent" : "bg-primary"
+      className={`outline-2 outline-neutral text-neutral outline hover:bg-accent cell ${
+        solved ? "bg-success" : "bg-primary"
       }`}
       onClick={asdf}
     >
