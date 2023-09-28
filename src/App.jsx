@@ -66,7 +66,7 @@ export default function App() {
 
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
+              <Route path="/history" element={<About />} />
               <Route path="/game" element={<Game></Game>} />
               <Route path="/create" element={<Create></Create>} />
             </Routes>
@@ -87,8 +87,8 @@ export default function App() {
                 </Link>
               </li>
               <li>
-                <Link className="btn btn-secondary" to="/about">
-                  Learn
+                <Link className="btn btn-secondary" to="/history">
+                  History
                 </Link>
               </li>
               <li>
