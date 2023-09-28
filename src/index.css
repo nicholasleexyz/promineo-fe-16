@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.puzzle-entry{
+  /* background-color: blue; */
+  display: block;
+  width: 100%;
+}
+
 .layout{
     /* display: grid; */
     /* grid-template-columns:  1fr; */

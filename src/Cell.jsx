@@ -25,7 +25,7 @@ export default function Cell({ index, solved, locked }) {
 
   return (
     <div
-      className={`outline-2 outline-neutral text-neutral outline ${
+      className={`outline-2 outline-gray-900 text-neutral outline ${
         !locked && "hover:bg-accent"
       } cell ${
         solved

@@ -107,7 +107,7 @@ export function Board() {
             Next
           </button>
         </div>
-        <div className="board bg-neutral">
+        <div className="board bg-gray-500">
           {[...Array(9).keys()].map((j) =>
             [...Array(9).keys()].map((i) => {
               return (
