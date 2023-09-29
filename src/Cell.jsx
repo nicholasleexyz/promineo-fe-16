@@ -5,18 +5,13 @@ import { cellsContext } from "./Contexts";
 export default function Cell({ index, solved, locked }) {
   const [cells, setCells] = useContext(cellsContext);
   const val = cells[index];
-  // const row = [...Array(9).keys()].map((i) => cells[i + (index - (index % 9))]);
-
-  // useEffect(() => {
-  //   console.log(row);
-  // }, [row]);
 
   function asdf() {
     if (!locked) {
       const a = [];
       for (let i = 0; i < cells.length; i++) {
         const cell = cells[i];
-        const b = i == index ? (cell + 1) % 9 : cell;
+        const b = i == index ? (cell + 1) % 10 : cell;
         a.push(b);
       }
       setCells(a);
@@ -42,8 +37,7 @@ export default function Cell({ index, solved, locked }) {
       }`}
       onClick={asdf}
     >
-      {/* {index} */}
-      {val < 0 ? "" : val + 1}
+      {val == 0 ? "" : val}
     </div>
   );
 }

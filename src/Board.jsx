@@ -1,7 +1,18 @@
 import { useContext, useEffect, useState } from "react";
 import Cell from "./Cell";
 import { cellsContext } from "./Contexts";
-// import cellsContext from "./Contexts";
+import { initialPuzzleData } from "./initialPuzzles";
+
+/**
+ * Helper function for creating entries in puzzleDB
+ * @param {Number} id
+ * @param {String} puzzleName
+ * @param {Number[][]} puzzle should be a 9x9 two dimensional array
+ * @returns {{id: Number, name: String, puzzle: Number[][]}}
+ */
+function createPuzzleEntry(id, puzzleName, puzzle) {
+  return { id: id, name: puzzleName, puzzle: puzzle };
+}
 
 export function Board() {
   const [solvedRows, setSolvedRows] = useState(Array(9).fill(false));
@@ -9,24 +20,25 @@ export function Board() {
   const [solvedBlocks, setSolvedBlocks] = useState(Array(9).fill(false));
   const [cells, setCells] = useContext(cellsContext);
 
-  const [counter, setCounter] = useState(0);
   const [lockedCells, setLockedCells] = useState([]);
   const [currentPuzzleName, setCurrentPuzzleName] = useState("");
 
-  useEffect(() => {
-    const a = async () =>
-      await fetch("./puzzles.json")
-        .then((res) => res.json())
-        .then((json) => {
-          const key = Object.keys(json)[counter];
-          const p = json[key].flat().map((n) => n - 1);
-          setLockedCells(p.map((c) => c != -1));
-          setCells(p);
-          setCurrentPuzzleName(key);
-        });
+  const [currentPuzzleIndex, setCurrentPuzzleIndex] = useState(0);
 
-    a();
-  }, [setCells, counter]);
+  const puzzles = initialPuzzleData.map((puzzleData) =>
+    createPuzzleEntry(puzzleData.id, puzzleData.name, puzzleData.puzzle.flat())
+  );
+
+  useEffect(() => {
+    setCurrentPuzzleName(puzzles[currentPuzzleIndex].name);
+    setLockedCells(() => {
+      return puzzles[currentPuzzleIndex].puzzle.map((c) => c != 0);
+    });
+    setCells(() => puzzles[currentPuzzleIndex].puzzle);
+    setCurrentPuzzleName(() => puzzles[currentPuzzleIndex].name);
+  }, [currentPuzzleIndex]);
+
+  useEffect(() => {}, []);
 
   useEffect(() => {
     const rows = [...Array(9).keys()]
@@ -36,9 +48,8 @@ export function Board() {
     const r = Array(9).fill(false);
     for (let i = 0; i < rows.length; i++) {
       const row = rows[i];
-      if ([...new Set(row.filter((n) => n >= 0))].length == 9) {
+      if ([...new Set(row.filter((n) => n >= 1))].length == 9) {
         r[i] = true;
-        // console.log("solved row: " + i);
       }
     }
     setSolvedRows(r);
@@ -46,13 +57,11 @@ export function Board() {
     const columns = [...Array(9).keys()].map((j) =>
       [...Array(9).keys()].map((i) => cells[i * 9 + j])
     );
-    // console.log(columns);
     const c = Array(9).fill(false);
     for (let i = 0; i < columns.length; i++) {
       const column = columns[i];
-      if ([...new Set(column.filter((n) => n >= 0))].length == 9) {
+      if ([...new Set(column.filter((n) => n >= 1))].length == 9) {
         c[i] = true;
-        // console.log("solved row: " + i);
       }
     }
     setSolvedColumns(c);
@@ -69,9 +78,8 @@ export function Board() {
     const b = Array(9).fill(false);
     for (let i = 0; i < blocks.length; i++) {
       const block = blocks[i];
-      if ([...new Set(block.filter((n) => n >= 0))].length == 9) {
+      if ([...new Set(block.filter((n) => n >= 1))].length == 9) {
         b[i] = true;
-        // console.log("solved cell block: " + i);
       }
     }
     setSolvedBlocks(b);
@@ -93,7 +101,11 @@ export function Board() {
         <div className="grid grid-cols-3">
           <button
             className="btn btn-primary mb-1.5"
-            onClick={() => setCounter((a) => (a - 1 + 5) % 5)}
+            onClick={() =>
+              setCurrentPuzzleIndex(
+                (a) => (a - 1 + puzzles.length) % puzzles.length
+              )
+            }
           >
             Previous
           </button>
@@ -102,7 +114,9 @@ export function Board() {
           </span>
           <button
             className="btn btn-primary mb-1.5"
-            onClick={() => setCounter((a) => (a + 1) % 5)}
+            onClick={() =>
+              setCurrentPuzzleIndex((a) => (a + 1) % puzzles.length)
+            }
           >
             Next
           </button>

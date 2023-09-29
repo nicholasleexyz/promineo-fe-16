@@ -1,39 +1,10 @@
 import { Routes, Route, Link } from "react-router-dom";
-import { Home } from "./Home";
 import { About } from "./About";
-// import { NavBar } from "./NavBar";
 import { useEffect } from "react";
 import { themeChange } from "theme-change";
-// import { ThemeSwitcher } from "./ThemeSwitcher";
 import { Game } from "./Game";
 import { Create } from "./Create";
 import { ThemeSwitcher } from "./ThemeSwitcher";
-
-/*
-  [ ] - Create // should be able to create new puzzles
-  [x] - Read
-  [ ] - Update // should be able to edit existing puzzles
-  [ ] - Delete // should be able to delete puzzles
-
-
-  aabbbbbb
-  aabbbbbb
-  aabbbbbb
-
-  a - navigation
-  b - content
-
-  navigation routes
-  game
-  puzzle selection 
-
-  create
-    update the puzzle "data base". (not persistent)
-
-  info
-    find a short description of the history of sudoku (maybe have gippity write it :P)
-
-*/
 
 export default function App() {
   useEffect(() => {
@@ -43,8 +14,6 @@ export default function App() {
   return (
     <>
       <div className="bg-neutral-content text-neutral">
-        {/* <NavBar></NavBar> */}
-
         <div className="layout w-100 drawer lg:drawer-open">
           <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content flex flex-col items-center justify-center">
@@ -65,10 +34,9 @@ export default function App() {
             </label>
 
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Game />} />
+              <Route path="/create" element={<Create />} />
               <Route path="/history" element={<About />} />
-              <Route path="/game" element={<Game></Game>} />
-              <Route path="/create" element={<Create></Create>} />
             </Routes>
           </div>
           <div className="drawer-side">
@@ -77,7 +45,7 @@ export default function App() {
               {/* Sidebar content here */}
 
               <li>
-                <Link className="btn btn-secondary" to="/game">
+                <Link className="btn btn-secondary" to="/">
                   Play
                 </Link>
               </li>

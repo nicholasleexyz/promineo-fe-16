@@ -3,28 +3,9 @@
 @tailwind utilities;
 
 .puzzle-entry{
-  /* background-color: blue; */
   display: block;
   width: 100%;
 }
-
-.layout{
-    /* display: grid; */
-    /* grid-template-columns:  1fr; */
-
-    /* align-items: end;
-    justify-items: end; */
-    /* width: 100%; */
-    /* height: 100vh; */
-    /* height: 100dvh; */
-}
-
-/* .navigation {
-    background-color: grey;
-    display: grid;
-    grid-template-columns: 1fr;
-    background-color: green;
-} */
 
 :root {
   --cell-block-gap: 0.5rem;
@@ -45,8 +26,6 @@ html {
   grid-auto-flow: row;
   align-items: start;
   width: 100%;
-
-  /* background-color: green; */
 }
 
 .banner{
@@ -54,18 +33,14 @@ html {
   justify-content: center;
   align-items: center;
   font-size: 5rem;
-  /* background-color: slateblue; */
   height: 8rem;
   width: 100%;
 }
 
 .board-wrapper{
   width: 100%;
-
-  /* width: fit-content; */
   display: flex;
   justify-content: center;
-  /* background-color: blue; */
 }
 
 .board{
@@ -76,11 +51,7 @@ html {
   height: min-content;
   margin: auto;
 
-  /* gap: 0.1rem; */
-
   padding: calc(var(--cell-block-gap) * 0.5);
-
-  /* background-color: grey; */
 }
 
 .cell{
@@ -94,31 +65,14 @@ html {
   width: var(--size);
   height: var(--size);
 
-  /* height: ; */
-  /* border: solid white 0.1rem; */
-  /* background-color: slategrey; */
-
-  /* border: solid black 0.1rem; */
-  /* outline: solid black 0.1rem; */
-
   font-size: xx-large;
-}
-
-.cell:hover{
-  /* background-color: darkslategrey; */
 }
 
 .cell:nth-child(27n):nth-child(-n + 54)
 {
-  /* background-color:salmon; */
   margin-bottom: var(--cell-block-gap);
 }
 
 .cell:nth-child(3n):nth-child(-n + 6){
-  /* background-color: green; */
   margin-right: var(--cell-block-gap);
 }
-
-/* .solved {
-  background-color: succ;
-} */
