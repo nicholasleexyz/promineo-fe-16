@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Board } from "./Board";
-import { cellsContext } from "./Contexts";
+import { Board } from "../Board";
+import { cellsContext } from "../Contexts";
 
 const init = Array(81).fill(-1);
 

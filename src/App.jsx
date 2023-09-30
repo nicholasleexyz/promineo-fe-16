@@ -1,15 +1,21 @@
 import { Routes, Route, Link } from "react-router-dom";
-import { About } from "./About";
+import { History } from "./pages/History";
 import { useEffect } from "react";
 import { themeChange } from "theme-change";
-import { Game } from "./Game";
-import { Create } from "./Create";
+import { Game } from "./pages/Game";
+import { Create } from "./pages/Create";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 
 export default function App() {
   useEffect(() => {
     themeChange(false);
   });
+
+  const routes = [
+    { path: "/", element: <Game /> },
+    { path: "/create", element: <Create /> },
+    { path: "/history", element: <History /> },
+  ];
 
   return (
     <>
@@ -34,9 +40,13 @@ export default function App() {
             </label>
 
             <Routes>
-              <Route path="/" element={<Game />} />
-              <Route path="/create" element={<Create />} />
-              <Route path="/history" element={<About />} />
+              {routes.map((route) => (
+                <Route
+                  key={route.path}
+                  path={route.path}
+                  element={route.element}
+                />
+              ))}
             </Routes>
           </div>
           <div className="drawer-side">

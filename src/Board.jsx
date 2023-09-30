@@ -26,7 +26,7 @@ export function Board() {
   const [currentPuzzleIndex, setCurrentPuzzleIndex] = useState(0);
 
   const puzzles = initialPuzzleData.map((puzzleData) =>
-    createPuzzleEntry(puzzleData.id, puzzleData.name, puzzleData.puzzle.flat())
+    createPuzzleEntry(puzzleData.id, puzzleData.name, puzzleData.puzzle)
   );
 
   useEffect(() => {

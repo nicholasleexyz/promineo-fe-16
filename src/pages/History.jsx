@@ -1,4 +1,4 @@
-export function About() {
+export function History() {
   return (
     <div className="bg-secondary-content text-white p-8 rounded-lg max-w-screen-2xl text-lg">
       <h1 className="underline text-center text-4xl mb-8">History of Sudoku</h1>

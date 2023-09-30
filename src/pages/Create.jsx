@@ -1,4 +1,4 @@
-import { initialPuzzleData } from "./initialPuzzles";
+import { initialPuzzleData } from "../initialPuzzles";
 import { useReducer, useState, useEffect } from "react";
 
 /**
@@ -29,7 +29,7 @@ export function Create() {
           : state.concat([action.payload]);
       case ACTIONS_PUZZLE_REDUCER.GET:
         return state.map((obj) =>
-          createPuzzleEntry(obj.id, obj.name, obj.puzzle.flat())
+          createPuzzleEntry(obj.id, obj.name, obj.puzzle)
         );
       case ACTIONS_PUZZLE_REDUCER.PUT:
         return state.map((entry) =>
