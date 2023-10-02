@@ -5,15 +5,8 @@ import { themeChange } from "theme-change";
 import { Game } from "./pages/Game";
 import { Create } from "./pages/Create";
 import { ThemeSwitcher } from "./ThemeSwitcher";
-import Temp from "./Temp";
-
-export function Temp1() {
-  return (
-    <>
-      <h1 className="text-white">Temp 1</h1>
-    </>
-  );
-}
+import Temp from "./temp/Temp";
+import Temp1 from "./temp/Temp1";
 
 export default function App() {
   useEffect(() => {
