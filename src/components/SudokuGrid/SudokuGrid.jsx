@@ -3,7 +3,7 @@ import { blocks } from "./sudokuBlocks";
 
 export default function SudokuGrid() {
   return (
-    <div className="w-full md:w-3/4 xl:w-1/2 max-xl:h-1/3 aspect-square min-w-fit min-h-fit grid grid-cols-3 gap-1 p-2 rounded-lg bg-secondary object-scale-down">
+    <div className="w-full sm:w-3/4 2xl:w-1/2 aspect-square grid grid-cols-3 gap-1 bg-secondary p-1 rounded-md">
       {blocks.map((block, i) => (
         <SudokuCellBlock key={i} i={i} />
       ))}
