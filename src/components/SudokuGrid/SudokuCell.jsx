@@ -1,22 +1,34 @@
 import { PropTypes } from "prop-types";
-import { useState } from "react";
 
-export default function SudokuCell({ value, isAdding }) {
-  const [currentValue, setCurrentValue] = useState((value + 1) % 9);
-
+export default function SudokuCell({
+  value,
+  index,
+  setCurrentCells,
+  isAdding,
+}) {
   return (
     <div
       className="min-h-fit min-w-fit flex aspect-square justify-center items-center border-2 border-neutral text-neutral-content select-none"
       onClick={() =>
-        setCurrentValue((a) => (isAdding ? (a + 1) % 10 : (a + 9) % 10))
+        setCurrentCells((a) =>
+          a.map((cell, i) => {
+            return i == index
+              ? isAdding
+                ? (cell + 1) % 10
+                : (cell + 9) % 10
+              : cell;
+          })
+        )
       }
     >
-      {!!currentValue && currentValue}
+      {!!value && value}
     </div>
   );
 }
 
 SudokuCell.propTypes = {
   value: PropTypes.number,
+  index: PropTypes.number,
+  setCurrentCells: PropTypes.func,
   isAdding: PropTypes.bool,
 };

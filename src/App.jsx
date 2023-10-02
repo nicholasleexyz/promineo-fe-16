@@ -75,7 +75,7 @@ export default function App() {
                 </li>
               ))}
               <li>
-                <ThemeSwitcher></ThemeSwitcher>
+                <ThemeSwitcher />
               </li>
             </ul>
           </div>
