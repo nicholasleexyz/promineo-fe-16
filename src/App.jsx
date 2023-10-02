@@ -61,12 +61,12 @@ export default function App() {
           </div>
           <div className="drawer-side">
             <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-            <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+            <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content gap-2 justify-center">
               {/* Sidebar content here */}
               {routes.map((route) => (
                 <li key={route.path}>
                   <Link
-                    className="btn btn-secondary"
+                    className="btn btn-secondary justify-start text-info-content"
                     to={route.path}
                     onClick={() => setTitle(route.title)}
                   >

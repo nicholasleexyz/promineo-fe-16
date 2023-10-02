@@ -4,7 +4,7 @@ export default function PlusAndMinus() {
   const [isAdding, setIsAdding] = useState(true);
 
   return (
-    <div className="flex items-center w-1/2 mt-4 gap-4 ">
+    <div className="flex items-center justify-start w-full my-2 gap-2 ">
       <button
         className={`btn btn-circle btn-primary text-xl text-neutral-content ${
           !isAdding && "outline outline-2 outline-white"
