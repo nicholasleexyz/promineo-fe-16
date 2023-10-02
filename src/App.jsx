@@ -7,6 +7,14 @@ import { Create } from "./pages/Create";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import Temp from "./Temp";
 
+export function Temp1() {
+  return (
+    <>
+      <h1 className="text-white">Temp 1</h1>
+    </>
+  );
+}
+
 export default function App() {
   useEffect(() => {
     themeChange(false);
@@ -17,6 +25,7 @@ export default function App() {
     { path: "/create", element: <Create />, title: "Create" },
     { path: "/history", element: <History />, title: "History" },
     { path: "/temp", element: <Temp />, title: "Temp" },
+    { path: "/temp1", element: <Temp1 />, title: "Temp 1" },
   ];
 
   const [title, setTitle] = useState(
@@ -44,7 +53,7 @@ export default function App() {
               </svg>
             </label>
 
-            <div className="flex justify-center items-center text-6xl h-32 bg-accent text-neutral w-full">
+            <div className="flex justify-center items-center text-6xl h-32 bg-accent text-base-content w-full">
               {title}
             </div>
             <div className="flex justify-center items-center h-full w-full">

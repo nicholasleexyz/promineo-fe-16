@@ -5,7 +5,7 @@ export function PuzzleList() {
   return (
     <>
       <div className="flex flex-col justify-start items-center w-full h-[calc(100vh-9rem)] my-2 bg-neutral-content p-4 overflow-auto">
-        {[...Array(100).keys()].map((i) => (
+        {[...Array(10).keys()].map((i) => (
           <PuzzleEntryButton key={i} index={i} />
         ))}
       </div>
@@ -27,7 +27,7 @@ PuzzleEntryButton.propTypes = {
 export default function Temp() {
   return (
     <>
-      <div className="grid grid-cols-4 w-[calc(100%-2rem)] mx-4 h-full">
+      <div className="grid grid-cols-4 w-[calc(100%-2rem)] mx-4 h-full gap-4">
         <SudokuGridSandbox initCells={Array(81).fill(1)} />
         <PuzzleList></PuzzleList>
       </div>
