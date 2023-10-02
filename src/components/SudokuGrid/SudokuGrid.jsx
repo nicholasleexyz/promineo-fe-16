@@ -17,12 +17,18 @@ export function SudokuGridSandbox({ initCells }) {
         currentCells={currentCells}
         setCurrentCells={setCurrentCells}
         extButtons={
-          <div className="flex gap-4">
-            <div className="btn btn-success">Save Changes</div>
+          // <div className="flex gap-4 bg-green-500">
+          <>
+            <input
+              type="text"
+              placeholder="Type here"
+              className="input input-bordered w-full max-w-xs text-info"
+            />
+            <div className="btn btn-success mx-4">Save Changes</div>
             <div className="btn btn-error">Delete</div>
-          </div>
+          </>
         }
-      ></SudokuGrid>
+      />
     </>
   );
 }
