@@ -4,8 +4,8 @@ import SudokuCellBlock from "./SudokuCellBlock";
 import { blocks } from "./sudokuBlocks";
 import { PropTypes } from "prop-types";
 
-export function SudokuGridSandbox({ cells }) {
-  const [currentCells, setCurrentCells] = useState(cells);
+export function SudokuGridSandbox({ initCells }) {
+  const [currentCells, setCurrentCells] = useState(initCells);
 
   useEffect(() => {
     console.log(currentCells);
@@ -16,16 +16,26 @@ export function SudokuGridSandbox({ cells }) {
       <SudokuGrid
         currentCells={currentCells}
         setCurrentCells={setCurrentCells}
+        extButtons={
+          <div className="flex gap-4">
+            <div className="btn btn-success">Save Changes</div>
+            <div className="btn btn-error">Delete</div>
+          </div>
+        }
       ></SudokuGrid>
     </>
   );
 }
 
 SudokuGridSandbox.propTypes = {
-  cells: PropTypes.arrayOf(PropTypes.number),
+  initCells: PropTypes.arrayOf(PropTypes.number),
 };
 
-export default function SudokuGrid({ currentCells, setCurrentCells }) {
+export default function SudokuGrid({
+  currentCells,
+  setCurrentCells,
+  extButtons,
+}) {
   const [isAdding, setIsAdding] = useState(true);
 
   return (
@@ -41,7 +51,10 @@ export default function SudokuGrid({ currentCells, setCurrentCells }) {
           />
         ))}
       </div>
-      <PlusAndMinus isAdding={isAdding} setIsAdding={setIsAdding} />
+      <div className="flex justify-around my-4">
+        <PlusAndMinus isAdding={isAdding} setIsAdding={setIsAdding} />
+        {extButtons}
+      </div>
     </div>
   );
 }
@@ -49,4 +62,5 @@ export default function SudokuGrid({ currentCells, setCurrentCells }) {
 SudokuGrid.propTypes = {
   currentCells: PropTypes.arrayOf(PropTypes.number),
   setCurrentCells: PropTypes.func,
+  extButtons: PropTypes.element,
 };
