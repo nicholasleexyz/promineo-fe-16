@@ -1,4 +1,4 @@
-import PlusAndMinus from "../PlusAndMinusButtons";
+import PlusAndMinus from "./PlusAndMinusButtons";
 import SudokuCellBlock from "./SudokuCellBlock";
 import { blocks } from "./sudokuBlocks";
 import { PropTypes } from "prop-types";

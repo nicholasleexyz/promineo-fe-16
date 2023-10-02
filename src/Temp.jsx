@@ -1,6 +1,10 @@
 import SudokuGrid from "./components/SudokuGrid/SudokuGrid";
 import { cells } from "./components/SudokuGrid/sudokuBlocks";
 
+export function SudokuGridSandbox() {
+  return <></>;
+}
+
 export default function Temp() {
   return (
     <>
