@@ -1,41 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import PlusAndMinus from "./PlusAndMinusButtons";
 import SudokuCellBlock from "./SudokuCellBlock";
 import { blocks } from "./sudokuBlocks";
 import { PropTypes } from "prop-types";
-
-export function SudokuGridSandbox({ initCells }) {
-  const [currentCells, setCurrentCells] = useState(initCells);
-
-  useEffect(() => {
-    console.log(currentCells);
-  }, [currentCells]);
-
-  return (
-    <>
-      <SudokuGrid
-        currentCells={currentCells}
-        setCurrentCells={setCurrentCells}
-        extButtons={
-          // <div className="flex gap-4 bg-green-500">
-          <>
-            <input
-              type="text"
-              placeholder="Type here"
-              className="input input-bordered w-full max-w-xs text-info"
-            />
-            <div className="btn btn-success mx-4">Save Changes</div>
-            <div className="btn btn-error">Delete</div>
-          </>
-        }
-      />
-    </>
-  );
-}
-
-SudokuGridSandbox.propTypes = {
-  initCells: PropTypes.arrayOf(PropTypes.number),
-};
 
 export default function SudokuGrid({
   currentCells,
@@ -57,7 +24,7 @@ export default function SudokuGrid({
           />
         ))}
       </div>
-      <div className="flex justify-around my-4">
+      <div className="flex justify-start my-4 flex-wrap">
         <PlusAndMinus isAdding={isAdding} setIsAdding={setIsAdding} />
         {extButtons}
       </div>

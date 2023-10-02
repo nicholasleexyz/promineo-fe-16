@@ -1,4 +1,4 @@
-import { SudokuGridSandbox } from "./components/SudokuGrid/SudokuGrid";
+import SudokuGridSandbox from "./components/SudokuGrid/SudokuGridSandbox";
 
 export default function Temp() {
   return (
