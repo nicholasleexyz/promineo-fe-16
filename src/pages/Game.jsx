@@ -9,11 +9,8 @@ export function Game() {
 
   return (
     <cellsContext.Provider value={[cells, setCells]}>
-      <div className="content">
-        <div className="banner bg-accent text-neutral">SUDOKU</div>
-        <div className="board-wrapper">
-          <Board />
-        </div>
+      <div className="board-wrapper">
+        <Board />
       </div>
     </cellsContext.Provider>
   );
