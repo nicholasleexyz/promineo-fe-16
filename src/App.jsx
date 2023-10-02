@@ -5,6 +5,7 @@ import { themeChange } from "theme-change";
 import { Game } from "./pages/Game";
 import { Create } from "./pages/Create";
 import { ThemeSwitcher } from "./ThemeSwitcher";
+import Temp from "./Temp";
 
 export default function App() {
   useEffect(() => {
@@ -15,6 +16,7 @@ export default function App() {
     { path: "/", element: <Game /> },
     { path: "/create", element: <Create /> },
     { path: "/history", element: <History /> },
+    { path: "/temp", element: <Temp /> },
   ];
 
   return (
