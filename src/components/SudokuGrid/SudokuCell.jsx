@@ -9,5 +9,5 @@ export default function SudokuCell({ value }) {
 }
 
 SudokuCell.propTypes = {
-  value: PropTypes.string,
+  value: PropTypes.number,
 };
