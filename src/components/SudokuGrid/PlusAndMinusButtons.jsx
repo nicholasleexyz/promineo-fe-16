@@ -1,8 +1,6 @@
-import { useState } from "react";
+import { PropTypes } from "prop-types";
 
-export default function PlusAndMinus() {
-  const [isAdding, setIsAdding] = useState(true);
-
+export default function PlusAndMinus({ isAdding, setIsAdding }) {
   return (
     <div className="flex items-center justify-start w-full my-2 gap-2 ">
       <button
@@ -24,3 +22,8 @@ export default function PlusAndMinus() {
     </div>
   );
 }
+
+PlusAndMinus.propTypes = {
+  isAdding: PropTypes.bool,
+  setIsAdding: PropTypes.func,
+};
