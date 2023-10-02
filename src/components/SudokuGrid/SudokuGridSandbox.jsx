@@ -19,8 +19,8 @@ export default function SudokuGridSandbox({ initCells }) {
           <>
             <input
               type="text"
-              placeholder="Type here"
-              className="input input-bordered w-full max-w-xs text-info mb-4 mr-4"
+              placeholder="Edit Puzzle Name"
+              className="input input-bordered w-1/2 min-w-fit text-info mb-4 mr-4"
             />
             <div className="btn btn-success mr-4">Save Changes</div>
             <div className="btn btn-error mr-4">Delete</div>
