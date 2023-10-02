@@ -9,14 +9,14 @@ export default function Temp() {
   );
 
   return (
-    <div className="grid grid-cols-3 aspect-square gap-1 p-2 rounded-lg bg-secondary">
+    <div className="w-1/2 aspect-square min-w-fit min-h-fit grid grid-cols-3 gap-1 p-2 rounded-lg bg-secondary">
       {blocks.map((block, i) => {
         return (
           <div key={i} className="grid grid-cols-3 bg-primary">
             {block.map((cell, j) => {
               return (
                 <div
-                  className="w-32 h-32 flex justify-center items-center border-2 border-neutral text-4xl text-neutral-content"
+                  className="min-h-fit min-w-fit flex aspect-square justify-center items-center border-2 border-neutral p-1 text-2xl text-neutral-content"
                   key={i * 9 + j}
                 >
                   {i * 9 + j}
