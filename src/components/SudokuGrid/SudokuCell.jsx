@@ -8,10 +8,10 @@ export default function SudokuCell({ value, isAdding }) {
     <div
       className="min-h-fit min-w-fit flex aspect-square justify-center items-center border-2 border-neutral text-neutral-content select-none"
       onClick={() =>
-        setCurrentValue((a) => (isAdding ? (a + 1) % 9 : (a + 8) % 9))
+        setCurrentValue((a) => (isAdding ? (a + 1) % 10 : (a + 9) % 10))
       }
     >
-      {currentValue + 1}
+      {!!currentValue && currentValue}
     </div>
   );
 }
