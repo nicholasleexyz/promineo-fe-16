@@ -7,9 +7,9 @@ import {
 import { useEffect } from "react";
 
 export function PuzzleEntryButton({ index }) {
-  const { board, setBoard } = useBoardContext();
-  const { puzzles, setPuzzles } = usePuzzlesContext();
-  const { puzzleIndex, setPuzzleIndex } = usePuzzleIndexContext();
+  const { setBoard } = useBoardContext();
+  const { puzzles } = usePuzzlesContext();
+  const { setPuzzleIndex } = usePuzzleIndexContext();
 
   useEffect(() => {
     console.log(puzzles);

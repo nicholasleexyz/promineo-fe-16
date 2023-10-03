@@ -1,14 +1,8 @@
 import { PuzzleEntryButton } from "./PuzzleEntryButton";
-import {
-  useBoardContext,
-  usePuzzleIndexContext,
-  usePuzzlesContext,
-} from "../contexts/contexts";
+import { usePuzzlesContext } from "../contexts/contexts";
 
 export default function PuzzleList() {
-  const { board, setBoard } = useBoardContext();
-  const { puzzles, setPuzzles } = usePuzzlesContext();
-  const { puzzleIndex, setPuzzleIndex } = usePuzzleIndexContext();
+  const { puzzles } = usePuzzlesContext();
 
   return (
     <>

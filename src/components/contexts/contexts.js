@@ -27,7 +27,7 @@ export function usePuzzleIndexContext() {
   const puzzleIndexContext = useContext(PuzzleIndexContext);
   if (!puzzleIndexContext) {
     throw new Error(
-      "Puzzle index Context should be used within Puzzle Context Provider"
+      "Puzzle Index Context should be used within Puzzle Index Context Provider"
     );
   }
   return puzzleIndexContext;

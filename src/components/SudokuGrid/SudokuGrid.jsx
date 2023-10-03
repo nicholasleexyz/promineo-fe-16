@@ -3,18 +3,13 @@ import PlusAndMinus from "./PlusAndMinusButtons";
 import SudokuCellBlock from "./SudokuCellBlock";
 import { blocks } from "./sudokuBlocks";
 import { PropTypes } from "prop-types";
-import {
-  useBoardContext,
-  usePuzzleIndexContext,
-  usePuzzlesContext,
-} from "../contexts/contexts";
+import { usePuzzleIndexContext, usePuzzlesContext } from "../contexts/contexts";
 
 export default function SudokuGrid({ extButtons }) {
   const [isAdding, setIsAdding] = useState(true);
 
-  const { board, setBoard } = useBoardContext();
-  const { puzzles, setPuzzles } = usePuzzlesContext();
-  const { puzzleIndex, setPuzzleIndex } = usePuzzleIndexContext();
+  const { puzzles } = usePuzzlesContext();
+  const { puzzleIndex } = usePuzzleIndexContext();
 
   return (
     <div className="col-span-3 w-full sm:w-3/4 lg:w-1/2 h-fit m-auto">
@@ -27,13 +22,7 @@ export default function SudokuGrid({ extButtons }) {
 
       <div className="aspect-square grid grid-cols-3 gap-1 p-1 rounded-md bg-secondary mb-4">
         {blocks.map((block, i) => (
-          <SudokuCellBlock
-            key={i}
-            i={i}
-            currentCells={board}
-            setCurrentCells={setBoard}
-            isAdding={isAdding}
-          />
+          <SudokuCellBlock key={i} i={i} isAdding={isAdding} />
         ))}
       </div>
       <div className="grid grid-cols-4 gap-2">{extButtons}</div>

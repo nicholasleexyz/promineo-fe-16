@@ -1,7 +1,7 @@
 export const initialPuzzleData = [
   {
     id: 1,
-    name: "puzzle 1",
+    name: "Cool Puzzle Name",
     puzzle: [
        1, 0, 0, 4, 0, 7, 8, 0, 3,
        0, 7, 0, 0, 0, 3, 0, 2, 0,
