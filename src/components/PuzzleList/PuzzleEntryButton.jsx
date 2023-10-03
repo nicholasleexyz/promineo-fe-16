@@ -4,16 +4,16 @@ import {
   usePuzzleIndexContext,
   usePuzzlesContext,
 } from "../contexts/contexts";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 export function PuzzleEntryButton({ index }) {
   const { setBoard } = useBoardContext();
   const { puzzles } = usePuzzlesContext();
   const { setPuzzleIndex } = usePuzzleIndexContext();
 
-  useEffect(() => {
-    console.log(puzzles);
-  }, [puzzles]);
+  // useEffect(() => {
+  //   console.log(puzzles);
+  // }, [puzzles]);
 
   const handleClick = () => {
     setPuzzleIndex(index);
