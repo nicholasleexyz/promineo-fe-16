@@ -3,7 +3,6 @@ import { useBoardContext } from "../contexts/contexts";
 
 export default function SudokuCell({ index, isAdding }) {
   const { board, setBoard } = useBoardContext();
-  // const value = board[index];
   const value = board[index];
 
   const handleClick = () =>
