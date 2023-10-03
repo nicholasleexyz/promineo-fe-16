@@ -15,7 +15,7 @@ export default function SudokuGrid({
     <div className="col-span-3 w-full sm:w-3/4 lg:w-1/2 h-fit m-auto">
       <div className="grid grid-cols-3">
         <PlusAndMinus isAdding={isAdding} setIsAdding={setIsAdding} />
-        <h1 className="flex items-center justify-center text-white align-middle text-lg col-span-2 mb-1 rounded-full bg-secondary">
+        <h1 className="flex items-center justify-center text-white align-middle text-lg col-span-2 mb-1 rounded-lg bg-secondary">
           New Puzzle Name
         </h1>
       </div>

@@ -3,7 +3,6 @@ import { useEffect } from "react";
 
 export default function PlusAndMinus({ isAdding, setIsAdding }) {
   useEffect(() => {
-    console.log("asdf");
     const plusKeys = ["ArrowRight", "+", "="];
     const minusKeys = ["ArrowLeft", "-", "_"];
 

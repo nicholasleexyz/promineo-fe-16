@@ -44,20 +44,22 @@ export default function App() {
               <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
             </svg>
           </label>
-
-          <div className="flex justify-center items-center text-6xl h-32 bg-accent text-base-content w-full">
-            {title}
-          </div>
-          <div className="flex justify-center items-center h-full w-full">
-            <Routes>
-              {routes.map((route) => (
-                <Route
-                  key={route.path}
-                  path={route.path}
-                  element={route.element}
-                />
-              ))}
-            </Routes>
+          <div className="w-full h-screen grid grid-flow-row grid-rows-6 grid-cols-1 ">
+            {/* <div className="flex justify-center items-center text-6xl h-32 bg-accent text-base-content w-full"> */}
+            <div className="flex justify-center items-center row-span-1 w-full h-full text-6xl bg-accent text-base-content">
+              {title}
+            </div>
+            <div className="flex justify-center items-center h-full w-full row-span-5">
+              <Routes>
+                {routes.map((route) => (
+                  <Route
+                    key={route.path}
+                    path={route.path}
+                    element={route.element}
+                  />
+                ))}
+              </Routes>
+            </div>
           </div>
         </div>
         <div className="drawer-side">
