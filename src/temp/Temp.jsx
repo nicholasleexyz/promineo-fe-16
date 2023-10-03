@@ -5,7 +5,7 @@ export default function Temp() {
   return (
     <>
       <div className="grid sm:grid-cols-4 w-full h-full sm:gap-4 grid-cols-1 justify-center">
-        <SudokuGridSandbox initCells={Array(81).fill(1)} />
+        <SudokuGridSandbox />
         <PuzzleList></PuzzleList>
       </div>
     </>

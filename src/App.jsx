@@ -7,11 +7,18 @@ import { Create } from "./pages/Create";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import Temp from "./temp/Temp";
 import Temp1 from "./temp/Temp1";
+import PuzzlesContextProvider from "./components/contexts/PuzzlesContextProvider";
+import CurrentPuzzleInfoContextProvider from "./components/contexts/BoardContextProvider";
+import PuzzleIndexContextProvider from "./components/contexts/PuzzleIndexContextProvider";
 
 export default function App() {
   useEffect(() => {
     themeChange(false);
   });
+
+  /*
+    load in the initial puzzles
+  */
 
   const routes = [
     { path: "/", element: <Game />, title: "Game" },
@@ -49,17 +56,24 @@ export default function App() {
             <div className="flex justify-center items-center row-span-1 w-full h-full text-6xl bg-secondary text-secondary-content">
               {title}
             </div>
-            <div className="flex justify-center items-center h-full w-full row-span-5">
-              <Routes>
-                {routes.map((route) => (
-                  <Route
-                    key={route.path}
-                    path={route.path}
-                    element={route.element}
-                  />
-                ))}
-              </Routes>
-            </div>
+
+            <PuzzleIndexContextProvider>
+              <PuzzlesContextProvider>
+                <CurrentPuzzleInfoContextProvider>
+                  <div className="flex justify-center items-center h-full w-full row-span-5">
+                    <Routes>
+                      {routes.map((route) => (
+                        <Route
+                          key={route.path}
+                          path={route.path}
+                          element={route.element}
+                        />
+                      ))}
+                    </Routes>
+                  </div>
+                </CurrentPuzzleInfoContextProvider>
+              </PuzzlesContextProvider>
+            </PuzzleIndexContextProvider>
           </div>
         </div>
         <div className="drawer-side">

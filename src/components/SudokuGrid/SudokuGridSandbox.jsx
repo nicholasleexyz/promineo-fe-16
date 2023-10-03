@@ -1,19 +1,10 @@
-import { useEffect, useState } from "react";
 import SudokuGrid from "./SudokuGrid";
 import { PropTypes } from "prop-types";
 
-export default function SudokuGridSandbox({ initCells }) {
-  const [currentCells, setCurrentCells] = useState(initCells);
-
-  useEffect(() => {
-    console.log(currentCells);
-  }, [currentCells]);
-
+export default function SudokuGridSandbox() {
   return (
     <>
       <SudokuGrid
-        currentCells={currentCells}
-        setCurrentCells={setCurrentCells}
         extButtons={
           <>
             <input
