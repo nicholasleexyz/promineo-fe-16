@@ -12,30 +12,27 @@ export default function SudokuGrid({
   const [isAdding, setIsAdding] = useState(true);
 
   return (
-    // <div className="flex justify-center flex-col h-full bg-red-500">
-    <>
-      <div className="col-span-3 w-full sm:w-3/4 lg:w-1/2 h-fit m-auto">
-        <div className="grid grid-cols-3">
-          <PlusAndMinus isAdding={isAdding} setIsAdding={setIsAdding} />
-          <h1 className="flex items-center justify-start text-white text-lg col-span-2">
-            New Puzzle Name
-          </h1>
-        </div>
-
-        <div className="aspect-square grid grid-cols-3 gap-1 p-1 rounded-md bg-secondary mb-4">
-          {blocks.map((block, i) => (
-            <SudokuCellBlock
-              key={i}
-              i={i}
-              currentCells={currentCells}
-              setCurrentCells={setCurrentCells}
-              isAdding={isAdding}
-            />
-          ))}
-        </div>
-        <div className="grid grid-cols-4 gap-2">{extButtons}</div>
+    <div className="col-span-3 w-full sm:w-3/4 lg:w-1/2 h-fit m-auto">
+      <div className="grid grid-cols-3">
+        <PlusAndMinus isAdding={isAdding} setIsAdding={setIsAdding} />
+        <h1 className="flex items-center justify-center text-white text-lg col-span-2">
+          New Puzzle Name
+        </h1>
       </div>
-    </>
+
+      <div className="aspect-square grid grid-cols-3 gap-1 p-1 rounded-md bg-secondary mb-4">
+        {blocks.map((block, i) => (
+          <SudokuCellBlock
+            key={i}
+            i={i}
+            currentCells={currentCells}
+            setCurrentCells={setCurrentCells}
+            isAdding={isAdding}
+          />
+        ))}
+      </div>
+      <div className="grid grid-cols-4 gap-2">{extButtons}</div>
+    </div>
   );
 }
 
