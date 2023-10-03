@@ -8,7 +8,7 @@ export default function SudokuCell({
 }) {
   return (
     <div
-      className="min-h-fit min-w-fit flex aspect-square justify-center items-center border-2 border-neutral text-neutral-content select-none"
+      className="min-h-fit min-w-fit flex aspect-square justify-center items-center border-2 border-neutral text-neutral-content select-none hover:bg-accent"
       onClick={() =>
         setCurrentCells((a) =>
           a.map((cell, i) => {
