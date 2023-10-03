@@ -26,7 +26,7 @@ export default function App() {
   );
 
   return (
-    <div className="bg-neutral text-neutral">
+    <div className="bg-neutral text-neutral-content">
       <div className="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-center">
@@ -46,7 +46,7 @@ export default function App() {
           </label>
           <div className="w-full h-screen grid grid-flow-row grid-rows-6 grid-cols-1 ">
             {/* <div className="flex justify-center items-center text-6xl h-32 bg-accent text-base-content w-full"> */}
-            <div className="flex justify-center items-center row-span-1 w-full h-full text-6xl bg-accent text-base-content">
+            <div className="flex justify-center items-center row-span-1 w-full h-full text-6xl bg-secondary text-secondary-content">
               {title}
             </div>
             <div className="flex justify-center items-center h-full w-full row-span-5">

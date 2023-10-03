@@ -15,7 +15,6 @@ export default function SudokuGridSandbox({ initCells }) {
         currentCells={currentCells}
         setCurrentCells={setCurrentCells}
         extButtons={
-          // <div className="flex gap-4 bg-green-500">
           <>
             <input
               type="text"
