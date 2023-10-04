@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { PuzzlesContext } from "./PuzzlesContextProvider";
 import { BoardContext } from "./BoardContextProvider";
 import { PuzzleIndexContext } from "./PuzzleIndexContextProvider";
+import { GameContext } from "./GameContextProvider";
 
 export function usePuzzlesContext() {
   const puzzlesContext = useContext(PuzzlesContext);
@@ -31,4 +32,14 @@ export function usePuzzleIndexContext() {
     );
   }
   return puzzleIndexContext;
+}
+
+export function useGameContext() {
+  const gameContext = useContext(GameContext);
+  if (!gameContext) {
+    throw new Error(
+      "Game Context should be used within Game Context Provider"
+    );
+  }
+  return gameContext;
 }

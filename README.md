@@ -8,7 +8,3 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 https://daisyui.com/docs/themes/
-
-
-be able to change puzzle entry names
-be able to change puzzle entry puzzles 

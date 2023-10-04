@@ -9,15 +9,14 @@ import CurrentPuzzleInfoContextProvider from "./components/contexts/BoardContext
 import PuzzleIndexContextProvider from "./components/contexts/PuzzleIndexContextProvider";
 import Create from "./pages/Create";
 import Game from "./pages/Game";
+import { useGameContext } from "./components/contexts/contexts";
 
 export default function App() {
   useEffect(() => {
     themeChange(false);
   });
 
-  /*
-    load in the initial puzzles
-  */
+  const { setGame } = useGameContext();
 
   const routes = [
     { path: "/", element: <Game />, title: "Game" },
@@ -83,7 +82,10 @@ export default function App() {
                 <Link
                   className="btn btn-secondary justify-start text-info-content"
                   to={route.path}
-                  onClick={() => setTitle(route.title)}
+                  onClick={() => {
+                    setTitle(route.title);
+                    setGame(route.title == "Game");
+                  }}
                 >
                   {route.title}
                 </Link>
