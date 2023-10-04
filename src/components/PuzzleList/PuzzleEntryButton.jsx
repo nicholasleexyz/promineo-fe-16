@@ -8,7 +8,7 @@ import {
 export function PuzzleEntryButton({ index }) {
   const { setBoard } = useBoardContext();
   const { puzzles } = usePuzzlesContext();
-  const { setPuzzleIndex } = usePuzzleIndexContext();
+  const { puzzleIndex, setPuzzleIndex } = usePuzzleIndexContext();
 
   const handleClick = () => {
     setPuzzleIndex(index);
@@ -17,7 +17,9 @@ export function PuzzleEntryButton({ index }) {
 
   return (
     <div
-      className="btn btn-primary w-full my-1 rounded-md p-2 flex justify-center items-center"
+      className={`btn w-full my-1 rounded-md p-2 flex justify-center items-center ${
+        index == puzzleIndex ? "btn-primary" : "btn-secondary"
+      }`}
       onClick={handleClick}
     >
       {puzzles[index].name}
