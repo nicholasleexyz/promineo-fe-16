@@ -1,15 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PlusAndMinus from "./PlusAndMinusButtons";
 import SudokuCellBlock from "./SudokuCellBlock";
 import { blocks } from "./sudokuBlocks";
 import { PropTypes } from "prop-types";
-import { usePuzzleIndexContext, usePuzzlesContext } from "../contexts/contexts";
+import {
+  useBoardContext,
+  usePuzzleIndexContext,
+  usePuzzlesContext,
+} from "../contexts/contexts";
 
 export default function SudokuGrid({ extButtons }) {
   const [isAdding, setIsAdding] = useState(true);
 
   const { puzzles } = usePuzzlesContext();
-  const { puzzleIndex } = usePuzzleIndexContext();
+  const { puzzleIndex, setPuzzleIndex } = usePuzzleIndexContext();
+  const { setBoard } = useBoardContext();
+
+  useEffect(() => {
+    setPuzzleIndex(puzzleIndex);
+    setBoard(puzzles[puzzleIndex].puzzle);
+  }, []);
 
   return (
     <div className="col-span-3 w-full sm:w-3/4 lg:w-1/2 h-fit m-auto">

@@ -7,9 +7,9 @@ export default function PuzzleList() {
   return (
     <>
       <div className="flex flex-col justify-start items-center w-full h-full bg-neutral-content p-4 overflow-auto">
-        {puzzles.map((puzzles, i) => (
+        {puzzles.map((puzzle, i) => (
           <PuzzleEntryButton key={i} index={i}>
-            {puzzles.name}
+            {puzzle.name}
           </PuzzleEntryButton>
         ))}
       </div>
