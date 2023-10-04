@@ -34,7 +34,7 @@ export default function SudokuGrid({ extButtons }) {
           <SudokuCellBlock key={i} i={i} isAdding={isAdding} />
         ))}
       </div>
-      <div className="grid grid-cols-4 gap-2">{extButtons}</div>
+      <div className="grid grid-cols-5 gap-2">{extButtons}</div>
     </div>
   );
 }

@@ -18,9 +18,10 @@ export default function SudokuGridSandbox() {
   }, [puzzles, puzzleIndex]);
 
   function handleSave() {
+    const sanitize = (str) => str.replace(/[^a-z0-9]/gi, "").slice(0, 16);
     const entry = {
       id: puzzles[puzzleIndex].id,
-      name: nameInputRef.current.value,
+      name: sanitize(nameInputRef.current.value),
       puzzle: board,
     };
 
@@ -38,6 +39,9 @@ export default function SudokuGridSandbox() {
       setPuzzleIndex((a) => a % updatedPuzzles.length);
     }
   }
+  function handleCreate() {
+    console.log("create");
+  }
 
   return (
     <>
@@ -46,12 +50,15 @@ export default function SudokuGridSandbox() {
           <>
             <input
               type="text"
-              placeholder="Edit Puzzle Name"
+              placeholder="(max 16 characters)"
               className="input input-bordered text-base-content col-span-2"
               ref={nameInputRef}
             />
             <div className="btn btn-success" onClick={handleSave}>
               Save Changes
+            </div>
+            <div className="btn btn-warning" onClick={handleCreate}>
+              Create
             </div>
             <div className="btn btn-error" onClick={handleDelete}>
               Delete
