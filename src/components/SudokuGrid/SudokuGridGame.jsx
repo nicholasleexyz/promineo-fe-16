@@ -8,12 +8,12 @@ import SudokuGrid from "./SudokuGrid";
 import { PropTypes } from "prop-types";
 
 export default function SudokuGridGame() {
-  const { board } = useBoardContext();
+  // const { board } = useBoardContext();
 
-  useEffect(() => {
-    // nameInputRef.current.value = puzzles[puzzleIndex].name;
-    console.log(puzzles);
-  }, [puzzles]);
+  // useEffect(() => {
+  // nameInputRef.current.value = puzzles[puzzleIndex].name;
+  // console.log(puzzles);
+  // }, [puzzles]);
 
   return (
     <>
