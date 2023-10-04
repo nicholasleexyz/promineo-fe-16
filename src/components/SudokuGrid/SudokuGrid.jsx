@@ -13,13 +13,12 @@ export default function SudokuGrid({ extButtons }) {
   const [isAdding, setIsAdding] = useState(true);
 
   const { puzzles } = usePuzzlesContext();
-  const { puzzleIndex, setPuzzleIndex } = usePuzzleIndexContext();
+  const { puzzleIndex } = usePuzzleIndexContext();
   const { setBoard } = useBoardContext();
 
   useEffect(() => {
-    setPuzzleIndex(puzzleIndex);
     setBoard(puzzles[puzzleIndex].puzzle);
-  }, []);
+  }, [setBoard, puzzles, puzzleIndex]);
 
   return (
     <div className="col-span-3 w-full sm:w-3/4 lg:w-1/2 h-fit m-auto">
