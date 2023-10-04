@@ -9,7 +9,6 @@ import PuzzleIndexContextProvider from "./components/contexts/PuzzleIndexContext
 import Create from "./pages/Create";
 import Game from "./pages/Game";
 import { useGameContext } from "./components/contexts/contexts";
-import { SolvedContext } from "./components/contexts/SolvedContextProvider";
 
 export default function App() {
   useEffect(() => {
