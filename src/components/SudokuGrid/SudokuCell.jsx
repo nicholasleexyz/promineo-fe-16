@@ -27,8 +27,8 @@ export default function SudokuCell({ index, isAdding }) {
 
   return (
     <div
-      className={`${
-        locked ? "bg-neutral" : "bg-secondary hover:bg-accent"
+      className={`${locked ? "bg-neutral" : "hover:bg-accent"} ${
+        !game && "bg-secondary"
       } min-h-fit min-w-fit flex aspect-square justify-center items-center border-2 border-neutral text-neutral-content select-none`}
       onClick={handleClick}
     >
