@@ -3,6 +3,7 @@ import { PuzzlesContext } from "./PuzzlesContextProvider";
 import { BoardContext } from "./BoardContextProvider";
 import { PuzzleIndexContext } from "./PuzzleIndexContextProvider";
 import { GameContext } from "./GameContextProvider";
+import { SolvedContext } from "./SolvedContextProvider";
 
 export function usePuzzlesContext() {
   const puzzlesContext = useContext(PuzzlesContext);
@@ -42,4 +43,14 @@ export function useGameContext() {
     );
   }
   return gameContext;
+}
+
+export function useSolvedContext() {
+  const solvedContext = useContext(SolvedContext);
+  if (!solvedContext) {
+    throw new Error(
+      "Solved Context should be used within Solved Context Provider"
+    );
+  }
+  return solvedContext;
 }
