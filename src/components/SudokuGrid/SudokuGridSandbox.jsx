@@ -15,10 +15,11 @@ export default function SudokuGridSandbox() {
 
   useEffect(() => {
     nameInputRef.current.value = puzzles[puzzleIndex].name;
+    // console.log(puzzles);
   }, [puzzles, puzzleIndex]);
 
   function handleSave() {
-    const sanitize = (str) => str.replace(/[^a-z0-9]/gi, "").slice(0, 16);
+    const sanitize = (str) => str.replace(/[^a-z0-9\s]/gi, "").slice(0, 16);
     const entry = {
       id: puzzles[puzzleIndex].id,
       name: sanitize(nameInputRef.current.value),
@@ -39,8 +40,22 @@ export default function SudokuGridSandbox() {
       setPuzzleIndex((a) => a % updatedPuzzles.length);
     }
   }
+
   function handleCreate() {
-    console.log("create");
+    const ids = puzzles.map((p) => p.id);
+    const id = puzzles.find((p) => !ids.includes(p.id + 1)).id + 1;
+
+    // for checking for duplicate ids
+    // console.log(ids.sort((a, b) => a - b));
+
+    const entry = {
+      id: id,
+      name: "new puzzle",
+      puzzle: Array(81).fill(0),
+    };
+
+    const updatedPuzzles = puzzles.concat(entry);
+    setPuzzles(updatedPuzzles);
   }
 
   return (
