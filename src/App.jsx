@@ -3,7 +3,6 @@ import { History } from "./pages/History";
 import { useEffect, useState } from "react";
 import { themeChange } from "theme-change";
 import { ThemeSwitcher } from "./ThemeSwitcher";
-import Temp1 from "./temp/Temp1";
 import PuzzlesContextProvider from "./components/contexts/PuzzlesContextProvider";
 import CurrentPuzzleInfoContextProvider from "./components/contexts/BoardContextProvider";
 import PuzzleIndexContextProvider from "./components/contexts/PuzzleIndexContextProvider";
@@ -22,7 +21,6 @@ export default function App() {
     { path: "/", element: <Game />, title: "Game" },
     { path: "/create", element: <Create />, title: "Create" },
     { path: "/history", element: <History />, title: "History" },
-    { path: "/temp1", element: <Temp1 />, title: "Temp 1" },
   ];
 
   const [title, setTitle] = useState(
