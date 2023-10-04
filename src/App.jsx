@@ -9,6 +9,7 @@ import PuzzleIndexContextProvider from "./components/contexts/PuzzleIndexContext
 import Create from "./pages/Create";
 import Game from "./pages/Game";
 import { useGameContext } from "./components/contexts/contexts";
+import { SolvedContext } from "./components/contexts/SolvedContextProvider";
 
 export default function App() {
   useEffect(() => {
@@ -51,7 +52,6 @@ export default function App() {
             <div className="flex justify-center items-center row-span-1 w-full h-full text-6xl bg-secondary text-secondary-content">
               {title}
             </div>
-
             <PuzzleIndexContextProvider>
               <PuzzlesContextProvider>
                 <CurrentPuzzleInfoContextProvider>

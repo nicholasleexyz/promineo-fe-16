@@ -4,6 +4,7 @@ import {
   useGameContext,
   usePuzzleIndexContext,
   usePuzzlesContext,
+  useSolvedContext,
 } from "../contexts/contexts";
 
 export default function SudokuCell({ index, isAdding }) {
@@ -11,6 +12,7 @@ export default function SudokuCell({ index, isAdding }) {
   const { puzzleIndex } = usePuzzleIndexContext();
   const { board, setBoard } = useBoardContext();
   const { game } = useGameContext();
+  const { solved } = useSolvedContext();
 
   const value = board[index];
   const locked = game && !!puzzles[puzzleIndex].puzzle[index];
@@ -25,11 +27,27 @@ export default function SudokuCell({ index, isAdding }) {
     }
   };
 
+  function getBackgroundColor() {
+    let bg = "";
+    const s = solved.includes(index);
+    if (locked && s) {
+      bg = "bg-accent-content";
+    } else if (locked) {
+      bg = "bg-neutral";
+    } else if (s) {
+      bg = "bg-accent";
+    } else if (!game) {
+      bg = "bg-secondary";
+    } else if (!s) {
+      bg = "bg-primary hover:bg-accent";
+    }
+
+    return bg;
+  }
+
   return (
     <div
-      className={`${locked ? "bg-neutral" : "hover:bg-accent"} ${
-        !game && "bg-secondary"
-      } min-h-fit min-w-fit flex aspect-square justify-center items-center border-2 border-neutral text-neutral-content select-none`}
+      className={`${getBackgroundColor()}  min-h-fit min-w-fit flex aspect-square justify-center items-center border-2 border-neutral text-neutral-content select-none`}
       onClick={handleClick}
     >
       {!!value && value}
