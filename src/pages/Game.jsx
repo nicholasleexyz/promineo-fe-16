@@ -1,17 +1,13 @@
-import { useState } from "react";
-import { Board } from "../Board";
-import { cellsContext } from "../Contexts";
+import PuzzleList from "../components/PuzzleList/PuzzleList";
+import SudokuGridGame from "../components/SudokuGrid/SudokuGridGame";
 
-const init = Array(81).fill(-1);
-
-export function Game() {
-  const [cells, setCells] = useState(init);
-
+export default function Game() {
   return (
-    <cellsContext.Provider value={[cells, setCells]}>
-      <div className="board-wrapper">
-        <Board />
+    <>
+      <div className="grid sm:grid-cols-4 w-full h-full sm:gap-4 grid-cols-1 justify-center">
+        <SudokuGridGame />
+        <PuzzleList></PuzzleList>
       </div>
-    </cellsContext.Provider>
+    </>
   );
 }

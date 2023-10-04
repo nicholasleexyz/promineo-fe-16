@@ -2,13 +2,13 @@ import { Routes, Route, Link } from "react-router-dom";
 import { History } from "./pages/History";
 import { useEffect, useState } from "react";
 import { themeChange } from "theme-change";
-import { Game } from "./pages/Game";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import Temp1 from "./temp/Temp1";
 import PuzzlesContextProvider from "./components/contexts/PuzzlesContextProvider";
 import CurrentPuzzleInfoContextProvider from "./components/contexts/BoardContextProvider";
 import PuzzleIndexContextProvider from "./components/contexts/PuzzleIndexContextProvider";
 import Create from "./pages/Create";
+import Game from "./pages/Game";
 
 export default function App() {
   useEffect(() => {
