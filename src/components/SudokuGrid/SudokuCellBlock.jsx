@@ -6,9 +6,14 @@ export default function SudokuCellBlock({ i, isAdding }) {
   // Just for funzies and to make life more interesting if it breaks :P
   const indexConversion = [...Array(81).keys()].map((i) => {
     const row = Math.floor(i / 9);
-    const offset = (Math.floor(i / 3) * 9) % 27;
-    const step = row * 3;
-    return offset + (((i % 3) + step) % 3) + step + Math.floor(row / 3) * 18;
+    const rowOffset = row * 3;
+
+    return (
+      ((Math.floor(i / 3) * 9) % 27) +
+      rowOffset +
+      Math.floor(row / 3) * 18 +
+      (((i % 3) + rowOffset) % 3)
+    );
   });
 
   return (
