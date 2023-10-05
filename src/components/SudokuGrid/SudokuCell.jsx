@@ -31,7 +31,7 @@ export default function SudokuCell({ index, isAdding }) {
     let bg = "";
     const s = solved.includes(index);
     if (locked && s) {
-      bg = "bg-success text-accent";
+      bg = "bg-success text-warning";
     } else if (locked) {
       bg = "bg-neutral";
     } else if (s) {

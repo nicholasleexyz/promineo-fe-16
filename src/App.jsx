@@ -47,7 +47,6 @@ export default function App() {
             </svg>
           </label>
           <div className="w-full h-screen grid grid-flow-row grid-rows-6 grid-cols-1 ">
-            {/* <div className="flex justify-center items-center text-6xl h-32 bg-accent text-base-content w-full"> */}
             <div className="flex justify-center items-center row-span-1 w-full h-full text-6xl bg-secondary text-secondary-content">
               {title}
             </div>
