@@ -15,7 +15,6 @@ export default function SudokuGridSandbox() {
 
   useEffect(() => {
     nameInputRef.current.value = puzzles[puzzleIndex].name;
-    // console.log(puzzles);
   }, [puzzles, puzzleIndex]);
 
   function handleSave() {
@@ -46,7 +45,7 @@ export default function SudokuGridSandbox() {
     const id = puzzles.find((p) => !ids.includes(p.id + 1)).id + 1;
 
     // for checking for duplicate ids
-    // console.log(ids.sort((a, b) => a - b));
+    console.log(ids.sort((a, b) => a - b));
 
     const entry = {
       id: id,
