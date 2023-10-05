@@ -66,7 +66,7 @@ export default function SudokuGridSandbox() {
             <input
               type="text"
               placeholder="(max 16 characters)"
-              className="input input-bordered text-base-content col-span-2"
+              className="input input-bordered text-base-content col-span-2 mb-2"
               ref={nameInputRef}
             />
             <div className="btn btn-success" onClick={handleSave}>

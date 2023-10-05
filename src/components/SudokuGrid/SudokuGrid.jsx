@@ -21,7 +21,7 @@ export default function SudokuGrid({ extButtons }) {
   }, [setBoard, puzzles, puzzleIndex]);
 
   return (
-    <div className="col-span-3 w-full sm:w-3/4 lg:w-1/2 h-fit m-auto">
+    <div className="col-span-3 w-full sm:w-3/4 lg:w-1/2 h-fit m-auto mt-2">
       <div className="grid grid-cols-3">
         <PlusAndMinus isAdding={isAdding} setIsAdding={setIsAdding} />
         <h1 className="flex items-center justify-center text-accent-content align-middle text-lg col-span-2 mb-1 rounded-lg bg-accent">
