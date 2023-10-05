@@ -31,13 +31,13 @@ export default function SudokuCell({ index, isAdding }) {
     let bg = "";
     const s = solved.includes(index);
     if (locked && s) {
-      bg = "bg-accent-content";
+      bg = "bg-success text-accent";
     } else if (locked) {
       bg = "bg-neutral";
     } else if (s) {
-      bg = "bg-accent";
+      bg = "bg-success";
     } else if (!game) {
-      bg = "bg-secondary";
+      bg = "bg-secondary hover:bg-primary";
     } else if (!s) {
       bg = "bg-primary hover:bg-accent";
     }
@@ -47,7 +47,7 @@ export default function SudokuCell({ index, isAdding }) {
 
   return (
     <div
-      className={`${getBackgroundColor()}  min-h-fit min-w-fit flex aspect-square justify-center items-center border-2 border-neutral text-neutral-content select-none`}
+      className={`${getBackgroundColor()} min-h-fit min-w-fit flex aspect-square justify-center items-center border-2 border-neutral text-neutral-content select-none`}
       onClick={handleClick}
     >
       {!!value && value}
